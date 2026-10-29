@@ -1,24 +1,7 @@
-<!DOCTYPE html>
-<html lang="id">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar Produk - TokoKu</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <script src="{{ asset('js/produk.js') }}" defer></script>
-</head>
-
-<body>
-    <div class="app">
-        <aside class="sidebar">
-            <div class="brand">TokoKu.</div>
-            <a href="#" class="nav-link">Beranda</a>
-            <a href="index.html" class="nav-link active">Produk</a>
-        </aside>
-
-        <main class="main">
-            <header class="page-header">
+@extends('produk.index')
+@section('content')
+<main class="main">
+    <header class="page-header">
                 <div>
                     <h1>Produk</h1>
                     <p class="subtitle">Kelola data produk Anda.</p>
@@ -26,7 +9,7 @@
                 <a href="tambah.html" class="btn btn-primary">
                     + Tambah Produk
                 </a>
-            </header>
+    </header>
 
             <section class="card">
                 <div class="toolbar">
@@ -61,8 +44,6 @@
                     </table>
                 </div>
             </section>
-        </main>
-    </div>
-</body>
+</main>
+@endsection
 
-</html>

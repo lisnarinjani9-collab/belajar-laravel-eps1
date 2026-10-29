@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class ProdukController extends Controller
 {
     //index -> menampilkan halaman utama
-    public function index(){
+    public function index()
+    {
         $produk = Produk::get();
         return view('produk.pages.produk', compact('produk'));
     }
