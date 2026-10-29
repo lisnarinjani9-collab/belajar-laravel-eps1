@@ -6,7 +6,7 @@
                     <h1>Produk</h1>
                     <p class="subtitle">Kelola data produk Anda.</p>
                 </div>
-                <a href="tambah.html" class="btn btn-primary">
+                <a href="{{ route('produk.tambah') }}" class="btn btn-primary">
                     + Tambah Produk
                 </a>
     </header>

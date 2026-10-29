@@ -37,7 +37,7 @@
                     </div>
 
                     <div class="form-actions">
-                        <a href="index.html" class="btn btn-secondary">Batal</a>
+                        <a href="{{ route('produk.table') }}" class="btn btn-secondary">Batal</a>
                         <button type="submit" class="btn btn-primary">
                             Simpan Produk
                         </button>

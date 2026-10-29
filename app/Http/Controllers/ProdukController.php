@@ -15,6 +15,10 @@ class ProdukController extends Controller
     }
 
     //create -> menampilkan halaman tambah
+    public function create()
+    {
+        return view('produk.pages.tambah');
+    }
     //store -> menjalankan fungsi edit data
 
     //edit -> menampilkan halaman update
