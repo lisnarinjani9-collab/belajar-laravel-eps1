@@ -13,7 +13,7 @@ class Produk extends Model
 
     protected $fillable = [
         'nama_produk',
-        'harga_produk',
+        'harga_barang',
         'kondisi_produk',
     ];
 }
