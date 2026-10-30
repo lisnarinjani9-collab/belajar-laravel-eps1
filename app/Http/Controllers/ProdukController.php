@@ -32,6 +32,8 @@ class ProdukController extends Controller
             'harga_produk' => $request->harga_produk,
             'kondisi_produk' => $request->kondisi_produk,
         ]);
+
+        return redirect()->route('produk.index')->with('success', 'Data produk berhasil ditambahkan.');
     }
 
     //edit -> menampilkan halaman update
