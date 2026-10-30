@@ -20,6 +20,19 @@ class ProdukController extends Controller
         return view('produk.pages.tambah');
     }
     //store -> menjalankan fungsi edit data
+    public function store(Request $request)
+    {
+        $request->validate([
+            'nama_produk' => 'required|string|max:100',
+            'harga_produk' => 'required|integer',
+            'kondisi_produk' => 'required|in:Bagus,Rusak',
+        ]);
+        Produk::create([
+            'nama_produk' => $request->nama_produk,
+            'harga_produk' => $request->harga_produk,
+            'kondisi_produk' => $request->kondisi_produk,
+        ]);
+    }
 
     //edit -> menampilkan halaman update
     //update -> menjalankan fungsi edit data
