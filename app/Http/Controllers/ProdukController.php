@@ -25,15 +25,15 @@ class ProdukController extends Controller
         $request->validate([
             'nama_produk' => 'required|string|max:100',
             'harga_produk' => 'required|integer',
-            'kondisi_produk' => 'required|in:Bagus,Rusak',
+            'kondisi_produk' => 'required|in:Bagus,Rusak'
         ]);
         Produk::create([
             'nama_produk' => $request->nama_produk,
             'harga_produk' => $request->harga_produk,
-            'kondisi_produk' => $request->kondisi_produk,
+            'kondisi_produk' => $request->kondisi_produk
         ]);
 
-        return redirect()->route('produk.index')->with('success', 'Data produk berhasil ditambahkan.');
+        return redirect()->route('produk.table');
     }
 
     //edit -> menampilkan halaman update
