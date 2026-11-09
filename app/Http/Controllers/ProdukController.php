@@ -37,6 +37,12 @@ class ProdukController extends Controller
     }
 
     //edit -> menampilkan halaman update
+
+    public function edit($id)
+    {
+        $produk = Produk::find($id);
+        return view('produk.pages.update', compact('produk'));
+    }
     //update -> menjalankan fungsi edit data
 
     //destroy -> menghapus data

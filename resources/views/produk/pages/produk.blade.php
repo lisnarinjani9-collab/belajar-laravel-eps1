@@ -35,7 +35,7 @@
                                 <td>{{ $item->harga_produk }}</td>
                                 <td>{{ $item->kondisi_produk }}</td>
                                 <td>
-                                    <a class="btn btn-secondary" href="update.html?id=1">Edit</a>
+                                    <a class="btn btn-secondary" href="{{ route ('produk.edit', $item->id) }}">Edit</a>
                                     <button type="button" class="btn btn-danger">Hapus</button>
                                 </td>
                             </tr>

@@ -1,22 +1,5 @@
-<!DOCTYPE html>
-<html lang="id">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Produk - TokoKu</title>
-    <link rel="stylesheet" href="css/produk.css">
-    <script src="js/produk.js" defer></script>
-</head>
-
-<body>
-    <div class="app">
-        <aside class="sidebar">
-            <div class="brand">TokoKu.</div>
-            <a href="#" class="nav-link">Beranda</a>
-            <a href="index.html" class="nav-link active">Produk</a>
-        </aside>
-
+@extends('produk.index')
+@section('content')
         <main class="main">
             <header class="page-header">
                 <div>
@@ -33,14 +16,14 @@
                         <label for="nama_produk">
                             Nama Produk <span class="required">*</span>
                         </label>
-                        <input type="text" id="nama_produk" required>
+                        <input type="text" id="nama_produk" value="{{ $produk->nama_produk }}" required>
                     </div>
 
                     <div class="form-group">
                         <label for="harga_produk">
                             Harga Produk (Rp) <span class="required">*</span>
                         </label>
-                        <input type="number" id="harga_produk" min="0" step="1" required>
+                        <input type="number" id="harga_produk" min="0" step="1" value="{{ $produk->harga_produk }}" required>
                     </div>
 
                     <div class="form-group">
@@ -63,7 +46,4 @@
                 </form>
             </section>
         </main>
-    </div>
-</body>
-
-</html>
+@endsection
