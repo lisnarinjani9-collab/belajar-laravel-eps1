@@ -36,7 +36,11 @@
                                 <td>{{ $item->kondisi_produk }}</td>
                                 <td>
                                     <a class="btn btn-secondary" href="{{ route ('produk.edit', $item->id) }}">Edit</a>
-                                    <button type="button" class="btn btn-danger">Hapus</button>
+                                    <form action="{{ route('produk.delete', $item->id) }}" method="POST" style="display: inline;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus produk ini?')">Hapus</button>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach

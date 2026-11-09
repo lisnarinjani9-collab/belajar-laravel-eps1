@@ -62,4 +62,9 @@ class ProdukController extends Controller
     }
 
     //destroy -> menghapus data
+    public function destroy(Produk $produk)
+    {
+        $produk->delete();
+        return redirect()->route('produk.table')->with('success', 'Data berhasil dihapus');
+    }
 }
