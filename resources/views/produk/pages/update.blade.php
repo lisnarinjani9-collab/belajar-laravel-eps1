@@ -9,7 +9,7 @@
             </header>
 
             <section class="card form-card">
-                <form id="formUpdate">
+                <form id="formUpdate" action="{{ route('produk.update', ['id' => $produk->id]) }}" method="POST">
                     <input type="hidden" id="produkId">
 
                     <div class="form-group">
@@ -31,14 +31,13 @@
                             Kondisi Produk <span class="required">*</span>
                         </label>
                         <select id="kondisi_produk" required>
-                            <option value="">Pilih kondisi</option>
-                            <option value="Bagus">Bagus</option>
-                            <option value="Rusak">Rusak</option>
+                            <option value="Bagus"{{ $produk->kondisi_produk == 'Bagus' ? 'selected' : '' }}>Bagus</option>
+                            <option value="Rusak"{{ $produk->kondisi_produk == 'Rusak' ? 'selected' : '' }}>Rusak</option>
                         </select>
                     </div>
 
                     <div class="form-actions">
-                        <a href="index.html" class="btn btn-secondary">Batal</a>
+                        <a href="{{ route('produk.table') }}" class="btn btn-secondary">Batal</a>
                         <button type="submit" class="btn btn-primary">
                             Update Produk
                         </button>

@@ -44,6 +44,22 @@ class ProdukController extends Controller
         return view('produk.pages.update', compact('produk'));
     }
     //update -> menjalankan fungsi edit data
+    public function update(Request $request, Produk $produk)
+    {
+        $request->validate([
+        'nama_produk' => 'required|string|max:100',
+        'harga_produk' => 'required|integer',
+        'kondisi_produk' => 'required|in:Bagus,Rusak'
+        ]);
+
+        $produk->update([
+            'nama_produk' => $request->nama_produk,
+            'harga_produk' => $request->harga_produk,
+            'kondisi_produk' => $request->kondisi_produk
+        ]);
+
+        return redirect()->route('produk.table')->with('success', 'Data berhasil diperbarui' );
+    }
 
     //destroy -> menghapus data
 }
