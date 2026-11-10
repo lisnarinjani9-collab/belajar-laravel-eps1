@@ -9,7 +9,7 @@
             </header>
 
             <section class="card form-card">
-                <form id="formUpdate" action="{{ route('produk.update', $produk->id) }}" method="POST">
+                <form id="formUpdate" action="{{ route('admin.produk.update', $produk->id) }}" method="POST">
                     @csrf
                     @method('PUT')
                     <input type="hidden" id="produkId">
@@ -39,7 +39,7 @@
                     </div>
 
                     <div class="form-actions">
-                        <a href="{{ route('produk.table') }}" class="btn btn-secondary">Batal</a>
+                        <a href="{{ route('admin.produk.table') }}" class="btn btn-secondary">Batal</a>
                         <button type="submit" class="btn btn-primary">
                             Update Produk
                         </button>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController as LoginController;
 use App\Http\Controllers\ProdukController as ProdukController;
+use App\Http\Middleware\CekAdmin;
 use Illuminate\Support\Facades\Route;
 
 // Head HTTP
@@ -12,8 +13,10 @@ Route::get('/', function () {
 // Login Page
 Route::prefix('login')->group(function () {
     Route::get('/', [LoginController::class, 'index'])->name('login');
+    Route::post('/', [LoginController::class, 'authenticate'])->name('authenticate');
 });
 
+Route::prefix('admin')->as('admin.')->middleware([CekAdmin::class])->group(function () {
 
 Route::prefix('produk')->group(function () {
 Route::get('/', [ProdukController::class, 'index'])->name('produk.table');
@@ -23,4 +26,7 @@ Route::get('/update/{id}', [ProdukController::class, 'edit'])->name('produk.edit
 Route::put('/update/{produk}', [ProdukController::class, 'update'])->name('produk.update');
 Route::delete('/hapus/{produk}', [ProdukController::class, 'destroy'])->name('produk.delete');
 });
+});
+
+
 

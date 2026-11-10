@@ -322,7 +322,8 @@
         </div>
 
         <!-- Form Login -->
-        <form action="#" method="POST" autocomplete="off">
+        <form action="" method="POST" autocomplete="off">
+            @csrf
 
             <!-- Email Input Group -->
             <div class="input-group">

@@ -33,7 +33,7 @@ class ProdukController extends Controller
             'kondisi_produk' => $request->kondisi_produk
         ]);
 
-        return redirect()->route('produk.table');
+        return redirect()->route('admin.produk.table');
     }
 
     //edit -> menampilkan halaman update
@@ -58,13 +58,13 @@ class ProdukController extends Controller
             'kondisi_produk' => $request->kondisi_produk
         ]);
 
-        return redirect()->route('produk.table')->with('success', 'Data berhasil diperbarui' );
+        return redirect()->route('admin.produk.table')->with('success', 'Data berhasil diperbarui' );
     }
 
     //destroy -> menghapus data
     public function destroy(Produk $produk)
     {
         $produk->delete();
-        return redirect()->route('produk.table')->with('success', 'Data berhasil dihapus');
+        return redirect()->route('admin.produk.table')->with('success', 'Data berhasil dihapus');
     }
 }

@@ -9,7 +9,7 @@
         </header>
 
         <section class="card form-card">
-            <form id="formTambah" method="POST" action="{{ route('produk.store') }}">
+            <form id="formTambah" method="POST" action="{{ route('admin.produk.store') }}">
                 @csrf
                 <div class="form-group">
                     <label for="nama_produk">
@@ -37,7 +37,7 @@
                 </div>
 
                 <div class="form-actions">
-                    <a href="{{ route('produk.table') }}" class="btn btn-secondary">Batal</a>
+                    <a href="{{ route('admin.produk.table') }}" class="btn btn-secondary">Batal</a>
                     <button type="submit" class="btn btn-primary">
                         Simpan Produk
                     </button>

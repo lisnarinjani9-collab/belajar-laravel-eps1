@@ -6,7 +6,7 @@
                     <h1>Produk</h1>
                     <p class="subtitle">Kelola data produk Anda.</p>
                 </div>
-                <a href="{{ route('produk.tambah') }}" class="btn btn-primary">
+                <a href="{{ route('admin.produk.tambah') }}" class="btn btn-primary">
                     + Tambah Produk
                 </a>
     </header>
@@ -35,8 +35,8 @@
                                 <td>{{ $item->harga_produk }}</td>
                                 <td>{{ $item->kondisi_produk }}</td>
                                 <td>
-                                    <a class="btn btn-secondary" href="{{ route ('produk.edit', $item->id) }}">Edit</a>
-                                    <form action="{{ route('produk.delete', $item->id) }}" method="POST" style="display: inline;">
+                                    <a class="btn btn-secondary" href="{{ route('admin.produk.edit', $item->id) }}">Edit</a>
+                                    <form action="{{ route('admin.produk.delete', $item->id) }}" method="POST" style="display: inline;">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus produk ini?')">Hapus</button>
